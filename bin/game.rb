@@ -19,10 +19,14 @@ num_guesses = 0
 #Track whether the player has guessed correctly.
 guessed_it = false
 
+until num_guesses == 10 || guessed_it
+
+
 puts "You've got #{10 - num_guesses} guesses left."
 print "Make a guess: "
 guess = gets.to_i
-#puts guess < target #(remove hash to test guess)
+#
+num_guesses += 1
 
 # compare the guess to the target
 # Print the appropriate message.
@@ -35,9 +39,10 @@ puts "Good job, #{name}!"
 puts "You guessed my number in #{num_guesses} guesses!"
 guessed_it = true
 end
+end
     
 # If player ran out of turns, tell them what the number was.
-if not guessed_it
+unless guessed_it
     puts "Sorry. You didn't get my number. (It was #{target}.)"
 end
 
