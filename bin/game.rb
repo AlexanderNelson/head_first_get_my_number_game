@@ -13,7 +13,12 @@ puts "Welcome, #{name}!"
 puts "I've got a random number between 1 and 100."
 puts "Can you guess it?"
 target = rand(100) + 1
-puts target #(remove hash to test number generator)
+#puts target #(remove hash to test number generator)
 num_guesses = 0
 
 puts "You've got #{10 - num_guesses} guesses left."
+print "Make a guess: "
+guess = gets.to_i
+puts guess < target
+
+
