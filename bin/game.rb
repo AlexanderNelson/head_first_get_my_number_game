@@ -16,9 +16,28 @@ target = rand(100) + 1
 #puts target #(remove hash to test number generator)
 num_guesses = 0
 
+#Track whether the player has guessed correctly.
+guessed_it = false
+
 puts "You've got #{10 - num_guesses} guesses left."
 print "Make a guess: "
 guess = gets.to_i
-puts guess < target
+#puts guess < target #(remove hash to test guess)
 
+# compare the guess to the target
+# Print the appropriate message.
+if guess < target
+puts "Ooops. Your guess was LOW."
+elsif guess > target
+puts "Ooops. your guess was HIGH."
+elsif guess == target
+puts "Good job, #{name}!"
+puts "You guessed my number in #{num_guesses} guesses!"
+guessed_it = true
+end
+    
+# If player ran out of turns, tell them what the number was.
+if not guessed_it
+    puts "Sorry. You didn't get my number. (It was #{target}.)"
+end
 
